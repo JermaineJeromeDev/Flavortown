@@ -54,6 +54,28 @@ function renderCart() {
 }
 
 
+function renderDishes() {
+    const container = document.getElementById("dishes-container");
+    container.innerHTML = "";
+
+    const burgerDishes = dishes.filter(d => d.category === "Burger");
+
+    const subCategories = [...new Set(burgerDishes.map(d => d.subCategory))];
+
+    subCategories.forEach(subCat => {
+        const section = document.createElement("div");
+        section.classList.add("sub-category-section");
+        section.innerHTML = `<h2>${subCat}</h2>`;
+
+        burgerDishes
+            .filter(d => d.subCategory === subCat)
+            .forEach(dish => section.appendChild(renderDish(dish)));
+
+        container.appendChild(section);
+    });
+}
+
+
 function checkout() {
     cart.forEach(d => d.amount = 0); 
     cart = [];
