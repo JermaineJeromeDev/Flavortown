@@ -5,7 +5,8 @@ let dishes = [
         "description": "Saftiger Rindfleisch-Patty mit Cheddar, frischem Salat, Tomaten, Gurken und hausgemachter Sauce.",
         "amount": 0,
         "category": "Burger",
-        "subCategory": "Classic Beef"
+        "subCategory": "Classic Beef",
+        "image": "./assets/img/burger/cheese.jpg"
     },
     {
         "name": "Double Cheese Burger",
@@ -13,7 +14,8 @@ let dishes = [
         "description": "Zwei Rindfleisch-Patties, doppelt Cheddar, frische Tomaten, Gurken und unsere Spezialsoße.",
         "amount": 0,
         "category": "Burger",
-        "subCategory": "Classic Beef"
+        "subCategory": "Classic Beef",
+        "image": "./assets/img/burger/double-cheese.jpg"
     },
     {
         "name": "Chili Cheese Burger",
@@ -21,7 +23,8 @@ let dishes = [
         "description": "Saftiger Beef-Patty mit Jalapeños, geschmolzenem Käse und feuriger Chili-Sauce.",
         "amount": 0,
         "category": "Burger",
-        "subCategory": "Special Beef"
+        "subCategory": "Special Beef",
+        "image": "./assets/img/burger/chili.jpg"
     },
     {
         "name": "BBQ Bacon Burger",
@@ -29,7 +32,8 @@ let dishes = [
         "description": "Rinder-Patty mit knusprigen Bacon, rauchiger BBQ Sauce, Zwiebelringen und Cheddar.",
         "amount": 0,
         "category": "Burger",
-        "subCategory": "Special Beef"
+        "subCategory": "Special Beef",
+        "image": "./assets/img/burger/bbq.jpg"
     },
     {
         "name": "Pulled Pork Burger",
@@ -37,15 +41,17 @@ let dishes = [
         "description": "Zart geschmortes Pulled Pork mit Cole Slaw und BBQ-Sauce im Brioche-Bun.",
         "amount": 0,
         "category": "Burger",
-        "subCategory": "Special Beef"
+        "subCategory": "Special Beef",
+        "image": "./assets/img/burger/pulled-pork.jpg"
     },
     {
-        "name": "Chicken Crispy Burger",
+        "name": "Crispy Chicken Burger",
         "price": 9.99,
         "description": "Knuspriges Hähnchenfilet im Bun mit Salat, Tomaten und Honig-Senf-Soße.", 
         "amount": 0,
         "category": "Burger",
-        "subCategory": "Chicken"
+        "subCategory": "Chicken",
+        "image": "./assets/img/burger/chicken.png"
     },
     {
         "name": "Veggie Deluxe Burger",
@@ -53,7 +59,8 @@ let dishes = [
         "description": "Hausgemachtes Gemüse-Patty mit Avocado-Creme, frischem Salat und knusprigem Ciabatta-Bun.",
         "amount": 0,
         "category": "Burger",
-        "subCategory": "Veggie"
+        "subCategory": "Veggie",
+        "image": "./assets/img/burger/veggie.jpg"
     },
     {
         "name": "Avocado Veggie Burger",
@@ -61,7 +68,8 @@ let dishes = [
         "description": "Vegetarischer Patty mit Avocado, frischen Sprossen, Tomaten und hausgemachter Kräutersoße.",
         "amount": 0,
         "category": "Burger",
-        "subCategory": "Veggie"
+        "subCategory": "Veggie",
+        "image": "./assets/img/burger/avocado.jpg"
     },
     {
         "name": "Pizza Margherita",
