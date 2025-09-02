@@ -38,12 +38,6 @@
     z-index: 3;
 }
 
-.hero-text h1 {
-    font-size: 3rem;
-    margin: 0;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
-}
-
 .hero-text button {
     background-color: #fcb70e;
     color: black;
@@ -59,4 +53,39 @@
 .hero-text button:hover {
     transform: scale(1.05);
     background-color: #ffb347;
+}
+
+.dish-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin: 12px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dish-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.dish-card button {
+    background-color: #fcb70e;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.dish-card button:hover {
+    background-color: #ffb347;
+    transform: scale(1.05);
 }
