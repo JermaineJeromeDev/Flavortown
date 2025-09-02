@@ -127,8 +127,26 @@ function scrollToDishes() {
 }
 
 
+function renderRating() {
+    const mainContent = document.getElementById('main-content');
+
+    const ratingSection = document.createElement('section');
+    ratingSection.classList.add('rating-section');
+    ratingSection.innerHTML = `
+        <h2>Restaurant Bewertung</h2>
+        <div class="stars">
+            ⭐⭐⭐⭐☆
+        </div>
+        <p>4.7/5 based on 123 reviews</p>
+    `;
+
+    mainContent.prepend(ratingSection);
+}
+
+
 document.addEventListener("DOMContentLoaded", () => {
     renderHero();
+    renderRating();
     renderDishes();   
     renderCart();     
 });
