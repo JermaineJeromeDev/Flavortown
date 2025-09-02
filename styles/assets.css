@@ -1,0 +1,28 @@
+.hero-content {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero img.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    margin: 0;
+}
+
+.hero .overlay-img {
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    width: 240px;
+    height: auto;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}

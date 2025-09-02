@@ -94,20 +94,20 @@ function checkout() {
 
 
 function renderHero() {
-    const heroContent = document.getElementById('hero-content');
-    if (!heroContent) return;
+    const heroContainer = document.getElementById('hero-content');
 
     const heroImg = document.createElement('img');
     heroImg.src = './assets/img/hero.jpg';
     heroImg.alt = 'Leckeres Essen';
     heroImg.classList.add('hero-img');
-    heroContent.appendChild(heroImg);
 
-    const overlapImg = document.createElement('img');
-    overlapImg.src = './assets/img/flavortown.png';
-    overlapImg.alt = 'Spezialgericht';
-    overlapImg.classList.add('hero-overlap');
-    heroContent.appendChild(overlapImg);
+    const overlayImg = document.createElement('img');
+    overlayImg.src = './assets/img/flavortown.png';
+    overlayImg.alt = 'Restaurant Logo';
+    overlayImg.classList.add('overlay-img');
+
+    heroContainer.appendChild(heroImg);
+    heroContainer.appendChild(overlayImg);
 }
 
 
