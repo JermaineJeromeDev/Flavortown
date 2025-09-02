@@ -2,6 +2,7 @@ function renderDish(dish) {
     const dishCard = document.createElement("div");
     dishCard.classList.add("dish-card");
     dishCard.innerHTML = `
+        <img src="${dish.image}" alt="${dish.name}">
         <h3>${dish.name}</h3>
         <p>${dish.description}</p>
         <span>${dish.price.toFixed(2)} €</span>
