@@ -14,6 +14,7 @@ function addToCart(dishName) {
     renderCart();
 }
 
+
 function removeFromCart(dishName) {
     const dish = cart.find(d => d.name === dishName);
     if (!dish) return;
@@ -25,9 +26,11 @@ function removeFromCart(dishName) {
     renderCart();
 }
 
+
 function calculateCartTotal() {
     return cart.reduce((sum, dish) => sum + dish.price * dish.amount, 0);
 }
+
 
 function calculateFinalTotal() {
     const subtotal = calculateCartTotal();
@@ -90,7 +93,26 @@ function checkout() {
 }
 
 
+function renderHero() {
+    const heroContent = document.getElementById('hero-content');
+    if (!heroContent) return;
+
+    const heroImg = document.createElement('img');
+    heroImg.src = './assets/img/hero.jpg';
+    heroImg.alt = 'Leckeres Essen';
+    heroImg.classList.add('hero-img');
+    heroContent.appendChild(heroImg);
+
+    const overlapImg = document.createElement('img');
+    overlapImg.src = './assets/img/flavortown.png';
+    overlapImg.alt = 'Spezialgericht';
+    overlapImg.classList.add('hero-overlap');
+    heroContent.appendChild(overlapImg);
+}
+
+
 document.addEventListener("DOMContentLoaded", () => {
+    renderHero();
     renderDishes();   
     renderCart();     
 });
