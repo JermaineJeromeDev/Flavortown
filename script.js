@@ -106,8 +106,24 @@ function renderHero() {
     overlayImg.alt = 'Restaurant Logo';
     overlayImg.classList.add('overlay-img');
 
+    const heroText = document.createElement('div');
+    heroText.classList.add('hero-text');
+    heroText.innerHTML = `
+        <h1>Flavortown</h1>
+        <p>Die besten Burger & Pizza der Stadt</p>
+        <button onclick="scrollToDishes()">Jetzt bestellen</button>
+    `;
+
     heroContainer.appendChild(heroImg);
     heroContainer.appendChild(overlayImg);
+    heroContainer.appendChild(heroText);
+    
+}
+
+
+function scrollToDishes() {
+    const dishesSection = document.getElementById('dishes-container');
+    dishesSection.scrollIntoView({behavior: 'smooth'});
 }
 
 
