@@ -11,27 +11,6 @@ function renderDish(dish) {
     return dishCard;
 }
 
-
-function renderDishes() {
-    const container = document.getElementById("dishes-container");
-    container.innerHTML = "";
-
-    const subCategories = [...new Set(dishes.map(d => d.subCategory))];
-
-    subCategories.forEach(subCat => {
-
-        const section = document.createElement("div");
-        section.classList.add("sub-category-section");
-        section.innerHTML = `<h2>${subCat}</h2>`;
-
-        dishes
-            .filter(d => d.subCategory === subCat)
-            .forEach(dish => section.appendChild(renderDish(dish)));
-
-        container.appendChild(section);
-    });
-}
-
 function cartItemTemplate(dish) {
     return `
         <div class ="cart-item">
