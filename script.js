@@ -58,26 +58,25 @@ function renderCart() {
 
 
 function renderDishes() {
-    const container = document.getElementById("dishes-container");
+    const container = document.getElementById("menu-sections");
+    if (!container) return;
     container.innerHTML = "";
 
     const burgerDishes = dishes.filter(d => d.category === "Burger");
-
     const subCategories = [...new Set(burgerDishes.map(d => d.subCategory))];
 
     subCategories.forEach(subCat => {
-        const section = document.createElement("div");
-        section.classList.add("sub-category-section");
-        section.innerHTML = `<h2>${subCat}</h2>`;
+    const section = document.createElement("div");
+    section.classList.add("sub-category-section");
+    section.innerHTML = `<h2>${subCat}</h2>`;
 
-        burgerDishes
-            .filter(d => d.subCategory === subCat)
-            .forEach(dish => section.appendChild(renderDish(dish)));
+    burgerDishes
+    .filter(d => d.subCategory === subCat)
+    .forEach(dish => section.appendChild(renderDish(dish)));
 
-        container.appendChild(section);
+    container.appendChild(section);
     });
 }
-
 
 function checkout() {
     cart.forEach(d => d.amount = 0); 
@@ -128,21 +127,14 @@ function scrollToDishes() {
 
 
 function renderRating() {
-    const mainContent = document.getElementById('main-content');
-
-    const ratingSection = document.createElement('section');
-    ratingSection.classList.add('rating-section');
+    const ratingSection = document.getElementById('rating-section');
+    if (!ratingSection) return;
     ratingSection.innerHTML = `
         <h2>Restaurant Bewertung</h2>
-        <div class="stars">
-            ⭐⭐⭐⭐☆
-        </div>
+        <div class="stars">⭐⭐⭐⭐☆</div>
         <p>4.7/5 based on 123 reviews</p>
     `;
-
-    mainContent.prepend(ratingSection);
 }
-
 
 document.addEventListener("DOMContentLoaded", () => {
     renderHero();
