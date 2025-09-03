@@ -21,10 +21,13 @@
 .dish-card p {
     font-size: 0.95rem;
     color: #555;
-    margin-bottom: 12px;
 }
 
 .dish-card span {
     font-weight: bold;
     margin-bottom: 12px;
+}
+
+p {
+    padding-bottom: 24px;
 }
