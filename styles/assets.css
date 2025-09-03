@@ -4,6 +4,12 @@
     justify-content: center;
 }
 
+.header {
+    width: 100%;
+    height: auto;
+}
+
+
 .hero {
     position: relative;
     width: 100%;
@@ -22,6 +28,7 @@
     height: 450px; 
     display: block;
     object-fit: cover; 
+    filter: brightness(0.8);
 } 
 
 .hero-inner {
