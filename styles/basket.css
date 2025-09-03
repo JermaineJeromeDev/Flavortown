@@ -1,11 +1,11 @@
 #cart {
     position: fixed;
-    left: 85%;
+    right: 0;
     height: 100vh;
     top: 0;
     background: #fff;
     padding: 16px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
-    width: 250px;
+    width: 300px;
 }
