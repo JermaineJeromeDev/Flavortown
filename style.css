@@ -1,9 +1,11 @@
 @import './styles/assets.css';
 @import './styles/fonts.css';
 @import './styles/standard.css';
+@import './styles/basket.css';
 
 .main-layout {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    align-items: flex-start;
 }
