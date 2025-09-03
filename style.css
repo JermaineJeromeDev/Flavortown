@@ -1,3 +1,9 @@
 @import './styles/assets.css';
 @import './styles/fonts.css';
 @import './styles/standard.css';
+
+.main-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
