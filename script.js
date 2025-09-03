@@ -92,19 +92,25 @@ function checkout() {
 }
 
 
-function renderHero() {
-    const heroContainer = document.getElementById('hero-content');
-
+function createHeroImg() {
     const heroImg = document.createElement('img');
     heroImg.src = './assets/img/hero.jpg';
     heroImg.alt = 'Leckeres Essen';
     heroImg.classList.add('hero-img');
+    return heroImg;
+}
 
+
+function createOverlayImg() {
     const overlayImg = document.createElement('img');
     overlayImg.src = './assets/img/flavortown.png';
-    overlayImg.alt = 'Restaurant Logo';
+    overlayImg.alt = 'Flavortown Logo';
     overlayImg.classList.add('overlay-img');
+    return overlayImg;
+}
 
+
+function createHeroText() {
     const heroText = document.createElement('div');
     heroText.classList.add('hero-text');
     heroText.innerHTML = `
@@ -112,10 +118,20 @@ function renderHero() {
         <p>Die besten Burger & Pizza der Stadt</p>
         <button onclick="scrollToDishes()">Jetzt bestellen</button>
     `;
+    return heroText;
+}
 
-    heroContainer.appendChild(heroImg);
-    heroContainer.appendChild(overlayImg);
-    heroContainer.appendChild(heroText);
+
+function renderHero() {
+    const heroContainer = document.getElementById('hero-content');
+    const heroInner = document.createElement('div');
+    heroInner.classList.add('hero-inner');
+
+    heroInner.appendChild(createHeroText());
+    heroInner.appendChild(createOverlayImg());
+
+    heroContainer.appendChild(createHeroImg());
+    heroContainer.appendChild(heroInner);
     
 }
 
