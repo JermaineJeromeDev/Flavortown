@@ -5,7 +5,7 @@
 
 .main-layout {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    flex-direction: row;   
+    gap: 24px;
     align-items: flex-start;
-}
+    }
