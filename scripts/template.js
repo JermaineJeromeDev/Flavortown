@@ -68,9 +68,17 @@ function footerTemplate() {
             </div>
             <div class="footer-column">
                 <h3>Folge uns</h3>
-                <a href="#">Instagram</a><br>
-                <a href="#">Facebook</a><br>
-                <a href="#">Twitter</a>
+                <div class="social-links">
+                    <a href="#">
+                        <img src="../assets/img/Logo/instagram_white.png">
+                    /a><br>
+                    <a href="#">
+                        <img src="../assets/img/Logo/facebook_white.png"
+                    </a><br>
+                    <a href="#">
+                        <img src="../assets/img/Logo/X_logo_white.png"
+                    </a>
+                </div>
             </div>
         </footer>
     `;
