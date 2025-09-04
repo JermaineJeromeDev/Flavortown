@@ -50,3 +50,8 @@ h2 {
     margin-bottom: 12px;
 }
 
+.footer-column h3 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: #ffcc00;
+}
