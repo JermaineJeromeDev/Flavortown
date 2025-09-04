@@ -13,11 +13,21 @@ function renderDish(dish) {
 
 function cartItemTemplate(dish) {
     return `
-        <div class ="cart-item">
+        <div class="cart-item">
             <span>${dish.name} (${dish.amount})</span>
             <span>${(dish.price * dish.amount).toFixed(2)} €</span>
-            <button onclick="removeFromCart('${dish.name}')">-</button>
-            <button onclick="addToCart('${dish.name}')">+</button>
+            
+            <button class="icon-btn" onclick="removeFromCart('${dish.name}')">
+                <img src="../assets/img/icon/remove.png" alt="Entfernen" />
+            </button>
+            
+            <button class="icon-btn" onclick="addToCart('${dish.name}')">
+                <img src="../assets/img/icon/add.png" alt="Hinzufügen" />
+            </button>
+            
+            <button class="icon-btn" onclick="deleteFromCart('${dish.name}')">
+                <img src="../assets/img/icon/delete.png" alt="Löschen" />
+            </button>
         </div>
     `;
 }
