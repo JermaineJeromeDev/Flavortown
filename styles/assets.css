@@ -51,6 +51,8 @@
     height: auto;
     z-index: 3;
     border-radius: 50%;
+
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.7);
 } 
     
 .hero-text { 
@@ -133,7 +135,7 @@
     border-radius: 8px; 
     text-align: left; 
     width: 100%; 
-    margin-top: 24px;
+    padding-top: 96px;
 } 
     
 .rating-section .stars { 
@@ -155,7 +157,7 @@
 }
 
 .icon-btn img {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     object-fit: contain;
 }
