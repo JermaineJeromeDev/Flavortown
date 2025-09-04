@@ -1,71 +1,71 @@
 let dishes = [
     {
-        "name": "Classic Cheeseburger",
+        "name": "Classic <br> Cheeseburger",
         "price": 8.99,
-        "description": "Saftiger Rindfleisch-Patty mit Cheddar, frischem Salat, Tomaten, Gurken und hausgemachter Sauce.",
+        "description": "Saftiger Rindfleisch-Patty mit Cheddar,<br> frischem Salat, Tomaten, Gurken <br> und hausgemachter Sauce.",
         "amount": 0,
         "category": "Burger",
         "subCategory": "Classic Beef",
         "image": "./assets/img/burger/cheese.jpg"
     },
     {
-        "name": "Double Cheese Burger",
+        "name": "Double <br> Cheeseburger",
         "price": 11.49,
-        "description": "Zwei Rindfleisch-Patties, doppelt Cheddar, frische Tomaten, Gurken und unsere Spezialsoße.",
+        "description": "Zwei Rindfleisch-Patties, doppelt Cheddar,<br> frische Tomaten, Gurken <br> und unsere Spezialsoße.",
         "amount": 0,
         "category": "Burger",
         "subCategory": "Classic Beef",
         "image": "./assets/img/burger/double-cheese.jpg"
     },
     {
-        "name": "Chili Cheese Burger",
+        "name": "Chili <br> Cheeseburger",
         "price": 10.99,
-        "description": "Saftiger Beef-Patty mit Jalapeños, geschmolzenem Käse und feuriger Chili-Sauce.",
+        "description": "Saftiger Beef-Patty mit Jalapeños,<br> geschmolzenem Käse und feuriger Chili-Sauce.",
         "amount": 0,
         "category": "Burger",
         "subCategory": "Special Beef",
         "image": "./assets/img/burger/chili.jpg"
     },
     {
-        "name": "BBQ Bacon Burger",
+        "name": "BBQ Bacon <br> Burger",
         "price": 10.49,
-        "description": "Rinder-Patty mit knusprigen Bacon, rauchiger BBQ Sauce, Zwiebelringen und Cheddar.",
+        "description": "Rinder-Patty mit knusprigen Bacon,<br> rauchiger BBQ Sauce, Zwiebelringen und Cheddar.",
         "amount": 0,
         "category": "Burger",
         "subCategory": "Special Beef",
         "image": "./assets/img/burger/bbq.jpg"
     },
     {
-        "name": "Pulled Pork Burger",
+        "name": "Pulled Pork <br> Burger",
         "price": 12.49,
-        "description": "Zart geschmortes Pulled Pork mit Cole Slaw und BBQ-Sauce im Brioche-Bun.",
+        "description": "Zart geschmortes Pulled Pork mit Cole Slaw und <br> BBQ-Sauce im Brioche-Bun.",
         "amount": 0,
         "category": "Burger",
         "subCategory": "Special Beef",
         "image": "./assets/img/burger/pulled-pork.jpg"
     },
     {
-        "name": "Crispy Chicken Burger",
+        "name": "Crispy Chicken <br> Burger",
         "price": 9.99,
-        "description": "Knuspriges Hähnchenfilet im Bun mit Salat, Tomaten und Honig-Senf-Soße.", 
+        "description": "Knuspriges Hähnchenfilet im Bun mit <br> Salat, Tomaten und Honig-Senf-Soße.", 
         "amount": 0,
         "category": "Burger",
         "subCategory": "Chicken",
         "image": "./assets/img/burger/chicken.png"
     },
     {
-        "name": "Veggie Deluxe Burger",
+        "name": "Veggie Deluxe <br> Burger",
         "price": 9.49,
-        "description": "Hausgemachtes Gemüse-Patty mit Avocado-Creme, frischem Salat und knusprigem Ciabatta-Bun.",
+        "description": "Hausgemachtes Gemüse-Patty <br> mit Avocado-Creme, frischem Salat <br> und knusprigem Ciabatta-Bun.",
         "amount": 0,
         "category": "Burger",
         "subCategory": "Veggie",
         "image": "./assets/img/burger/veggie.jpg"
     },
     {
-        "name": "Avocado Veggie Burger",
+        "name": "Avocado Veggie <br> Burger",
         "price": 9.99,
-        "description": "Vegetarischer Patty mit Avocado, frischen Sprossen, Tomaten und hausgemachter Kräutersoße.",
+        "description": "Vegetarischer Patty mit Avocado,<br> frischen Sprossen, Tomaten und <br> hausgemachter Kräutersoße.",
         "amount": 0,
         "category": "Burger",
         "subCategory": "Veggie",
