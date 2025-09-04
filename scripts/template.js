@@ -6,7 +6,9 @@ function renderDish(dish) {
         <h3>${dish.name}</h3>
         <p>${dish.description}</p>
         <span>${dish.price.toFixed(2)} €</span>
-        <button onclick="addToCart('${dish.name}')">+</button>
+        <button class="icon-btn" onclick="addToCart('${dish.name}')">
+            <img src="../assets/img/icon/add.png" alt="Hinzufügen" />
+        </button>
     `;
     return dishCard;
 }
