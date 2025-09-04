@@ -53,3 +53,25 @@ function orderConfirmationTemplate() {
             </div>
         `;
 }
+
+function footerTemplate() {
+    return `
+        <footer class="footer">
+            <div class="footer-column">
+                <h3>Über uns</h3>
+                <p>Wir bieten die besten Gerichte – frisch, lecker und schnell bei dir.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Kontakt</h3>
+                <p>Email: <a href=mailto:"jay.jero1901.gmail.com">info@meinebestellapp.de</p>
+                <p>Tel: <a href="tel: 0123456789>0123" 456789</p>
+            </div>
+            <div class="footer-column">
+                <h3>Folge uns</h3>
+                <a href="#">Instagram</a><br>
+                <a href="#">Facebook</a><br>
+                <a href="#">Twitter</a>
+            </div>
+        </footer>
+    `;
+}
