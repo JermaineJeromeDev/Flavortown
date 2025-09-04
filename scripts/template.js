@@ -41,7 +41,7 @@ function cartSummaryTemplate(totals) {
             <p>Zwischensumme: ${totals.subtotal.toFixed(2)} €</p>
             <p>Lieferkosten: ${totals.delivery === 0 ? "Gratis" : totals.delivery.toFixed(2) + " €"}</p>
             <strong>Gesamt: ${totals.final.toFixed(2)} €</strong>
-            <button onclick="checkout()">Bestellen</button>
+            <button class="checkout-btn" onclick="checkout()">Bestellen</button>
         </div>
     `;
 }
