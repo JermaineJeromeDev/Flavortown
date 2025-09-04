@@ -156,8 +156,8 @@
 }
 
 .icon-btn img {
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     object-fit: contain;
 }
 
@@ -170,6 +170,5 @@ footer {
     color: #fff;
     text-align: center;
     padding: 20px;
-    /* margin-top: 40px; */
     border-top: groove;
 }
