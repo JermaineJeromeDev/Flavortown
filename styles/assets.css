@@ -112,17 +112,15 @@
     margin-bottom: 12px; 
 } 
     
-.dish-card button { 
-    background-color: #f49210; 
-    color: white; 
+.dish-card button {   
     border: none; 
-    padding: 8px 16px; 
+    padding: 8px 8px; 
     cursor: pointer; 
     transition: background-color 0.2s, transform 0.2s; 
 } 
     
 .dish-card button:hover { 
-    background-color: #ffb347; 
+    background-color: #f49210; 
     transform: scale(1.05); 
 } 
     
