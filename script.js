@@ -164,11 +164,24 @@ function renderFooter() {
     footerContainer.innerHTML = footerTemplate();
 }
 
+
+function toggleMobileCart() {
+    const overlay = document.getElementById("mobile-cart-overlay");
+    overlay.classList.add("hidden");
+}
+
+
+function updateMobileCartTotal(total) {
+    document.getElementById("mobile-cart-total").innerHTML = total.toFixed(2) + " €";
+    document.getElementById("mobile-cart-sum").innerHTML = total.toFixed(2) + " €";
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     renderHero();
     renderRating();
     renderDishes();   
     renderCart(); 
-    renderFooter();    
+    renderFooter();
+    toggleMobileCart();    
 });
 
