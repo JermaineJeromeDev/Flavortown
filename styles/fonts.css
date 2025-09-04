@@ -27,16 +27,22 @@ h2 {
     display: flex;
     justify-content: center;
     filter: drop-shadow(2px 4px 6px black);
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-top: 16px;
 }
 
 .dish-card h3 {
     font-size: 1.2rem;
-    margin: 8px 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
 
 .dish-card p {
     font-size: 0.95rem;
     color: #555;
+    text-align: left;
+    font-weight: 600;
 }
 
 .dish-card span {
@@ -44,6 +50,3 @@ h2 {
     margin-bottom: 12px;
 }
 
-p {
-    padding-bottom: 24px;
-}
