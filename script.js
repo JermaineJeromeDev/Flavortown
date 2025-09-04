@@ -152,6 +152,12 @@ function renderRating() {
     `;
 }
 
+
+function removeItemCompletely(dishName) {
+    cart = cart.filter(d => d.name !== dishName);
+    renderCart();
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     renderHero();
     renderRating();
