@@ -56,29 +56,37 @@ function orderConfirmationTemplate() {
 
 function footerTemplate() {
     return `
-        <footer class="footer">
-            <div class="footer-column">
-                <h3>Über uns</h3>
-                <p>Wir bieten die besten Gerichte – frisch, lecker und schnell bei dir.</p>
-            </div>
-            <div class="footer-column">
-                <h3>Kontakt</h3>
-                <p>Email: <a href=mailto:"jay.jero1901.gmail.com">info@meinebestellapp.de</p>
-                <p>Tel: <a href="tel: 0123456789>0123" 456789</p>
-            </div>
-            <div class="footer-column">
-                <h3>Folge uns</h3>
-                <div class="social-links">
-                    <a href="#">
-                        <img src="../assets/img/Logo/instagram_white.png">
-                    /a><br>
-                    <a href="#">
-                        <img src="../assets/img/Logo/facebook_white.png"
-                    </a><br>
-                    <a href="#">
-                        <img src="../assets/img/Logo/X_logo_white.png"
-                    </a>
+        <footer>
+            <div class="footer-columns">
+                <img class="footer-logo" src="../assets/img/flavortown.png" alt="Flavortown Logo">
+                <div class="footer-column">
+                    <h4>Über uns</h4>
+                    <p>Wir bieten die besten Gerichte – <br> frisch, lecker und schnell bei dir.</p>
                 </div>
+                <div class="footer-column">
+                    <h4>Kontakt</h4>
+                    <p><a href="tel:0123456789">0123 456789</a></p>
+                    <p><a href="mailto:jay.jero1901@gmail.com">info@meinebestellapp.de</a></p>
+                </div>
+                <div class="footer-column">
+                    <h4>Folge uns</h4>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/accounts/login/" target="_blank">
+                            <img src="../assets/img/Logo/instagram_white.png" alt="Instagram">
+                        </a><br>
+                        <a href="https://www.facebook.com/?locale=de_DE" target="_blank">
+                            <img src="../assets/img/Logo/facebook_white.png" alt="Facebook">
+                        </a><br>
+                        <a href="https://x.com/i/flow/login" target="_blank">
+                            <img src="../assets/img/Logo/X_logo_white.png" alt="X">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <a href="impressum.html" target="_blank">Impressum</a> | 
+                <a href="#">Datenschutz</a> | 
+                <span>&copy; 2025 Jermaine Jérôme</span>
             </div>
         </footer>
     `;
