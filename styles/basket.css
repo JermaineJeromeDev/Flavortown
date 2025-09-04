@@ -14,7 +14,7 @@
     overflow-y: auto;
 }
 
-.card-item {
+.cart-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -24,25 +24,40 @@
     color: #333;
 }
 
-.card-item span {
+.cart-item span {
     display: flex;
     margin: 0 8px;
 }
 
-.card-item button {
+.cart-btn {
+    display: flex;
+    gap: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.cart-item button {
     background: none;
     border: none;
     cursor: pointer;
     margin: 0 4px;
 }
 
-.card-item button img {
+.cart-item button img {
     width: 20px;
     height: 20px;
     object-fit: contain;
     filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.2));
+
 }
 
 .card-item button:hover {
     transform: scale(1.2);
+}
+
+.cart-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: self-end;
+    padding-top: 8px;
 }
