@@ -158,10 +158,17 @@ function removeItemCompletely(dishName) {
     renderCart();
 }
 
+
+function renderFooter() {
+    const footerContainer = document.getElementById("footer");
+    footerContainer.innerHTML = footerTemplate();
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     renderHero();
     renderRating();
     renderDishes();   
-    renderCart();     
+    renderCart(); 
+    renderFooter();    
 });
 
