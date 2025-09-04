@@ -27,7 +27,7 @@ function cartItemTemplate(dish) {
                 <img src="../assets/img/icon/remove.png" alt="Entfernen" />
             </button>
             
-            <button class="icon-btn" onclick="deleteFromCart('${dish.name}')">
+            <button class="icon-btn" onclick="removeItemCompletely('${dish.name}')">
                 <img src="../assets/img/icon/delete.png" alt="Löschen" />
             </button>
         </div>
