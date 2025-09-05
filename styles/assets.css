@@ -9,6 +9,23 @@ header {
     width: 100%;
     height: 64px;
     background-color: #01142e;
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;         
+}
+
+header .max_width {
+    max-width: 1920px;        
+    display: flex;             
+    justify-content: flex-start;
+    align-items: center;        
+    margin: 0 auto;              
+    padding: 0 20px;             
+}
+
+.header-logo {
+    width: 124px;
+    height: auto;
 }
 
 .hero {
