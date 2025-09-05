@@ -4,6 +4,7 @@ const FREE_DELIVERY_FROM = 30;
 
 
 function initApp() {
+    renderHeaderLogo();
     renderHero();
     renderRating();
     renderDishes();
@@ -13,10 +14,24 @@ function initApp() {
     initMobileCartEvents();
 
     const body = document.body;
-    if (!document.getElementById("mobile-cart-button")) {
-        body.insertAdjacentHTML("beforeend", mobileCartButtonTemplate());
-    }
+    body.insertAdjacentHTML("beforeend", mobileCartButtonTemplate());
 }
+
+
+function renderHeaderLogo() {
+    const headerContainer = document.getElementById('header');
+    if (!headerContainer) return;
+
+    const logo = document.createElement('img');
+    logo.src = './assets/img/Logo/Logo.png';
+    logo.alt = 'Flavortown Logo';
+    logo.classList.add('header-logo');
+
+    headerContainer.appendChild(logo);
+}
+
+
+
 
 
 function addToCart(dishName) {
