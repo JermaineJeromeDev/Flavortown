@@ -91,3 +91,41 @@ function footerTemplate() {
         </footer>
     `;
 }
+
+function mobileCartButtonTemplate() {
+    return `
+        <div id="mobile-cart-button" onclick="toggleMobileCart()">
+            🛒 <span id="mobile-cart-total">0.00 €</span>
+        </div>
+        <div id="mobile-cart-overlay" class="hidden">
+            <div class="mobile-cart">
+                <h3>Dein Warenkorb</h3>
+                <div id="mobile-cart-items"></div>
+                <div class="cart-summary">
+                    <strong>Gesamt: <span id="mobile-cart-sum">0.00 €</span></strong>
+                </div>
+                <button onclick="checkout()">Bestellen</button>
+                <button onclick="toggleMobileCart()">Schließen</button>
+            </div>
+        </div>
+    `;
+}
+
+function mobileCartItemTemplate(dish) {
+    return `
+        <div class="cart-item">
+            <span>${dish.name} (${dish.amount})</span>
+            <span>${(dish.price * dish.amount).toFixed(2)} €</span>
+            <button onclick="removeFromCart('${dish.name}')">
+                <img src="../assets/img/icon/remove.png" alt="-" />
+            </button>
+            <button onclick="addToCart('${dish.name}')">
+                <img src="../assets/img/icon/add.png" alt="+" />
+            </button>
+            <button onclick="removeItemCompletely('${dish.name}')">
+                <img src="../assets/img/icon/delete.png" alt="x" />
+            </button>
+        </div>
+    `;
+}
+
