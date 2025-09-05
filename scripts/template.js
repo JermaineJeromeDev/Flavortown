@@ -103,7 +103,7 @@ function footerTemplate() {
             </div>
             <div class="footer-bottom">
                 <a href="impressum.html" target="_blank">Impressum</a> | 
-                <a href="#">Datenschutz</a> | 
+                <a href="datenschutz.html" target="_blank">Datenschutz</a> | 
                 <span>&copy; 2025 Jermaine Jérôme</span>
             </div>
         </footer>
