@@ -1,21 +1,21 @@
 function renderDish(dish) {
-    const dishCard = document.createElement("div");
-    dishCard.classList.add("dish-card");
-    dishCard.innerHTML = `
-        <div class="dish-img-wrapper">
-            <img src="${dish.image}" alt="Bild von ${dish.name}" />
+    return `
+        <div class="dish-card">
+            <div class="dish-img-wrapper">
+                <img src="${dish.image}" alt="Bild von ${dish.name}" />
+            </div>
+            <div class="dish-info">
+                <h3>${dish.name}</h3>
+                <p>${dish.description}</p>
+            </div>
+            <span class="dish-price">${dish.price.toFixed(2)} €</span>
+            <button class="icon-btn" onclick="addToCart('${dish.name}')" aria-label="${dish.name} zum Warenkorb hinzufügen">
+                <img src="./assets/img/icon/add.png" alt="Hinzufügen Symbol" />
+            </button>
         </div>
-        <div class="dish-info">
-            <h3>${dish.name}</h3>
-            <p>${dish.description}</p>
-        </div>
-        <span class="dish-price">${dish.price.toFixed(2)} €</span>
-        <button class="icon-btn" onclick="addToCart('${dish.name}')" aria-label="${dish.name} zum Warenkorb hinzufügen">
-            <img src="./assets/img/icon/add.png" alt="Hinzufügen Symbol" />
-        </button>
     `;
-    return dishCard;
 }
+
 
 function cartItemTemplate(dish) {
     return `
@@ -110,7 +110,6 @@ function mobileCartButtonTemplate() {
                     <strong>Gesamt: <span id="mobile-cart-sum">0.00 €</span></strong>
                 </div>
                 <button class="checkout-btn" onclick="checkout()" aria-label="Zur Kasse gehen">Bestellen</button>
-                <button class="close-btn" onclick="toggleMobileCart()" aria-label="Warenkorb schließen">Schließen</button>
             </div>
         </div>
     `;
