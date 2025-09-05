@@ -73,27 +73,28 @@ function orderConfirmationTemplate() {
 
 function footerTemplate() {
     return `
-        <footer>
-            <div class="footer-columns">
-                <img class="footer-logo" src="../assets/img/flavortown.png" alt="Flavortown Logo">
-                <div class="footer-column">
-                    <h4>Über uns</h4>
+        <footer class="footer">
+            <div class="footer-columns max_width">
+                <div class="footer-column logo-column">
+                    <img class="footer-logo" src="../assets/img/flavortown.png" alt="Flavortown Logo">
                     <p>Wir bieten die besten Gerichte – <br> frisch, lecker und schnell bei dir.</p>
                 </div>
+
                 <div class="footer-column">
                     <h4>Kontakt</h4>
                     <p><a href="tel:0123456789">0123 456789</a></p>
                     <p><a href="mailto:jay.jero1901@gmail.com">info@meinebestellapp.de</a></p>
                 </div>
+
                 <div class="footer-column">
                     <h4>Folge uns</h4>
                     <div class="social-links">
                         <a href="https://www.instagram.com/accounts/login/" target="_blank">
                             <img src="../assets/img/Logo/instagram_white.png" alt="Instagram">
-                        </a><br>
+                        </a>
                         <a href="https://www.facebook.com/?locale=de_DE" target="_blank">
                             <img src="../assets/img/Logo/facebook_white.png" alt="Facebook">
-                        </a><br>
+                        </a>
                         <a href="https://x.com/i/flow/login" target="_blank">
                             <img src="../assets/img/Logo/X_logo_white.png" alt="X">
                         </a>
@@ -108,6 +109,7 @@ function footerTemplate() {
         </footer>
     `;
 }
+
 
 function mobileCartButtonTemplate() {
     return `
