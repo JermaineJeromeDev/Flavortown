@@ -40,6 +40,7 @@ function cartItemTemplate(dish) {
     `;
 }
 
+
 function cartSummaryTemplate(totals) {
     return `
         <div class="cart-summary">
@@ -70,6 +71,7 @@ function orderConfirmationTemplate() {
             </div>
         `;
 }
+
 
 function footerTemplate() {
     return `
@@ -131,6 +133,7 @@ function mobileCartButtonTemplate() {
         </div>
     `;
 }
+
 
 function mobileCartItemTemplate(dish) {
     return `

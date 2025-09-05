@@ -31,9 +31,6 @@ function renderHeaderLogo() {
 }
 
 
-
-
-
 function addToCart(dishName) {
     const dish = dishes.find(d => d.name === dishName);
     if (!dish) return;
