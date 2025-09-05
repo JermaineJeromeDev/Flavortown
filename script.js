@@ -74,50 +74,54 @@ function renderCart() {
     const mobile = document.getElementById('mobile-cart-items');
     desktop.innerHTML = "";
     if (mobile) mobile.innerHTML = "";
-
     const totals = calculateFinalTotal(); 
 
     if (cart.length === 0) {
-        const empty = `<p>Dein Warenkorb ist leer</p>`;
-        desktop.innerHTML = empty;
-        if (mobile) mobile.innerHTML = empty;
-
-        
-        updateMobileCartTotal({ subtotal: 0, delivery: 0, final: 0 });
+        handleEmptyCart(desktop, mobile);
         return;
     }
+        renderCartItems(desktop, mobile, totals);
+}
 
+
+function renderCartItems(desktop, mobile, totals) {
     cart.forEach(d => {
         desktop.innerHTML += cartItemTemplate(d);
         if (mobile) mobile.innerHTML += mobileCartItemTemplate(d);
     });
-
     desktop.innerHTML += cartSummaryTemplate(totals);
-
-    if (mobile) updateMobileCartTotal(totals); 
+    if (mobile) updateMobileCartTotal(totals);
 }
+
+
+function handleEmptyCart(desktop, mobile) {
+    if (cart.length === 0) {
+        const empty = `<p>Dein Warenkorb ist leer</p>`;
+        desktop.innerHTML = empty;
+        if (mobile) mobile.innerHTML = empty;
+        updateMobileCartTotal({ subtotal: 0, delivery: 0, final: 0 });
+    }
+}
+
 
 
 function renderDishes() {
     const container = document.getElementById("menu-sections");
     if (!container) return;
     container.innerHTML = "";
-
     const burgerDishes = dishes.filter(d => d.category === "Burger");
     const subCategories = [...new Set(burgerDishes.map(d => d.subCategory))];
-
     subCategories.forEach(subCat => {
-    const section = document.createElement("div");
-    section.classList.add("sub-category-section");
-    section.innerHTML = `<h2>${subCat}</h2>`;
-
-    burgerDishes
-    .filter(d => d.subCategory === subCat)
-    .forEach(dish => section.appendChild(renderDish(dish)));
-
-    container.appendChild(section);
+        const section = document.createElement("div");
+        section.classList.add("sub-category-section");
+        section.innerHTML = `<h2>${subCat}</h2>`;
+        burgerDishes
+            .filter(d => d.subCategory === subCat)
+            .forEach(dish => section.insertAdjacentHTML("beforeend", renderDish(dish)));
+        container.appendChild(section);
     });
 }
+
 
 
 function checkout() {
@@ -160,7 +164,7 @@ function createOverlayImg() {
     overlayImg.src = './assets/img/flavortown.png';
     overlayImg.alt = 'Flavortown Logo';
     overlayImg.classList.add('overlay-img');
-    
+
     return overlayImg;
 }
 
@@ -232,9 +236,7 @@ function updateMobileCartTotal(totals) {
     const deliveryEl = document.getElementById("mobile-cart-delivery");
     const sumEl = document.getElementById("mobile-cart-sum");
     const totalEl = document.getElementById("mobile-cart-total"); 
-
     if (!subtotalEl || !deliveryEl || !sumEl || !totalEl) return;
-
     subtotalEl.innerHTML = totals.subtotal.toFixed(2) + " €";
     deliveryEl.innerHTML = totals.delivery === 0 ? "Gratis" : totals.delivery.toFixed(2) + " €";
     sumEl.innerHTML = totals.final.toFixed(2) + " €";
@@ -243,36 +245,36 @@ function updateMobileCartTotal(totals) {
 
 
 function initMobileCartEvents() {
+    setupMobileCartButtons();
+    handleMobileCartResize();
+    window.addEventListener("resize", handleMobileCartResize);
+    handleMobileCartResize();
+}
+
+
+function setupMobileCartButtons() {
     const btn = document.getElementById("mobile-cart-button");
     const overlay = document.getElementById("mobile-cart-overlay");
     const closeBtn = document.getElementById("mobile-cart-close");
     const checkoutBtn = document.getElementById("mobile-cart-checkout");
-
     if (btn) btn.addEventListener("click", toggleMobileCart);
     if (closeBtn) closeBtn.addEventListener("click", toggleMobileCart);
     if (checkoutBtn) checkoutBtn.addEventListener("click", checkout);
-
-    window.addEventListener("resize", () => {
-        const mobileBtn = document.getElementById("mobile-cart-button");
-
-        if (window.innerWidth > 700) {
-            
-            if (overlay) overlay.classList.add("hidden");
-
-            if (mobileBtn) mobileBtn.style.display = "none";
-
-            const desktopCart = document.getElementById("cart");
-            if (desktopCart) desktopCart.style.display = "block";
-        } else {
-
-            if (mobileBtn) mobileBtn.style.display = "block";
-
-            const desktopCart = document.getElementById("cart");
-            if (desktopCart) desktopCart.style.display = "none";
-        }
-    });
-
-    const event = new Event('resize');
-    window.dispatchEvent(event);
 }
 
+
+function handleMobileCartResize() {
+    const overlay = document.getElementById("mobile-cart-overlay");
+    const mobileBtn = document.getElementById("mobile-cart-button");
+    const desktopCart = document.getElementById("cart");
+    if (window.innerWidth > 700) {    
+        if (overlay) overlay.classList.add("hidden");
+        if (mobileBtn) mobileBtn.style.display = "none";
+        const desktopCart = document.getElementById("cart");
+        if (desktopCart) desktopCart.style.display = "block";
+        } else {
+            if (mobileBtn) mobileBtn.style.display = "block";
+            const desktopCart = document.getElementById("cart");
+            if (desktopCart) desktopCart.style.display = "none";
+}
+}
