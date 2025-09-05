@@ -11,8 +11,12 @@ function initApp() {
 
     renderFooter();
     initMobileCartEvents();
-}
 
+    const body = document.body;
+    if (!document.getElementById("mobile-cart-button")) {
+        body.insertAdjacentHTML("beforeend", mobileCartButtonTemplate());
+    }
+}
 
 
 function addToCart(dishName) {
@@ -80,8 +84,6 @@ function renderCart() {
 }
 
 
-
-
 function renderDishes() {
     const container = document.getElementById("menu-sections");
     if (!container) return;
@@ -102,6 +104,7 @@ function renderDishes() {
     container.appendChild(section);
     });
 }
+
 
 function checkout() {
     cart.forEach(d => d.amount = 0);
@@ -125,7 +128,6 @@ function checkout() {
         renderCart();
     }, 3000);
 }
-
 
 
 function createHeroImg() {
@@ -221,7 +223,6 @@ function updateMobileCartTotal(totals) {
     sumEl.innerHTML = totals.final.toFixed(2) + " €";
     totalEl.innerHTML = totals.final.toFixed(2) + " €"; 
 }
-
 
 
 function initMobileCartEvents() {
