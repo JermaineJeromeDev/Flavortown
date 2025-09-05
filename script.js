@@ -45,11 +45,15 @@ function renderCart() {
     desktop.innerHTML = "";
     if (mobile) mobile.innerHTML = "";
 
+    const totals = calculateFinalTotal(); 
+
     if (cart.length === 0) {
         const empty = `<p>Dein Warenkorb ist leer</p>`;
         desktop.innerHTML = empty;
         if (mobile) mobile.innerHTML = empty;
-        updateMobileCartTotal(0);
+
+        
+        updateMobileCartTotal({ subtotal: 0, delivery: 0, final: 0 });
         return;
     }
 
@@ -58,10 +62,11 @@ function renderCart() {
         if (mobile) mobile.innerHTML += mobileCartItemTemplate(d);
     });
 
-    const totals = calculateFinalTotal();
     desktop.innerHTML += cartSummaryTemplate(totals);
-    if (mobile) updateMobileCartTotal(totals.final);
+
+    if (mobile) updateMobileCartTotal(totals); 
 }
+
 
 
 
@@ -191,15 +196,20 @@ function toggleMobileCart() {
 }
 
 
-function updateMobileCartTotal(total) {
-    const totalEl = document.getElementById("mobile-cart-total");
+function updateMobileCartTotal(totals) {
+    const subtotalEl = document.getElementById("mobile-cart-subtotal");
+    const deliveryEl = document.getElementById("mobile-cart-delivery");
     const sumEl = document.getElementById("mobile-cart-sum");
+    const totalEl = document.getElementById("mobile-cart-total"); 
 
-    if (!totalEl || !sumEl) return; 
+    if (!subtotalEl || !deliveryEl || !sumEl || !totalEl) return;
 
-    totalEl.innerHTML = total.toFixed(2) + " €";
-    sumEl.innerHTML = total.toFixed(2) + " €";
+    subtotalEl.innerHTML = totals.subtotal.toFixed(2) + " €";
+    deliveryEl.innerHTML = totals.delivery === 0 ? "Gratis" : totals.delivery.toFixed(2) + " €";
+    sumEl.innerHTML = totals.final.toFixed(2) + " €";
+    totalEl.innerHTML = totals.final.toFixed(2) + " €"; 
 }
+
 
 
 function initMobileCartEvents() {
