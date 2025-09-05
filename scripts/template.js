@@ -24,21 +24,33 @@ function cartItemTemplate(dish) {
             <span>${dish.name} (${dish.amount})</span>
             <span>${(dish.price * dish.amount).toFixed(2)} €</span>
             <div class="cart-btn">
-                <button class="icon-btn" onclick="addToCart('${dish.name}')">
-                    <img src="../assets/img/icon/add.png" alt="Hinzufügen" />
+                <button onclick="addToCart('${dish.name}')">
+                    <img src="../assets/img/icon/add.png" alt="+" />
                 </button>
                 
-                <button class="icon-btn" onclick="removeFromCart('${dish.name}')">
-                    <img src="../assets/img/icon/remove.png" alt="Entfernen" />
+                <button onclick="removeFromCart('${dish.name}')">
+                    <img src="../assets/img/icon/remove.png" alt="-" />
                 </button>
                 
-                <button class="icon-btn" onclick="removeItemCompletely('${dish.name}')">
-                    <img src="../assets/img/icon/delete.png" alt="Löschen" />
+                <button onclick="removeItemCompletely('${dish.name}')">
+                    <img src="../assets/img/icon/delete.png" alt="x" />
                 </button>
             </div>
         </div>
     `;
 }
+
+function cartSummaryTemplate(totals) {
+    return `
+        <div class="cart-summary">
+            <p>Zwischensumme: ${totals.subtotal.toFixed(2)} €</p>
+            <p>Lieferkosten: ${totals.delivery === 0 ? "Gratis" : totals.delivery.toFixed(2) + " €"}</p>
+            <strong>Gesamt: ${totals.final.toFixed(2)} €</strong>
+            <button class="checkout-btn" onclick="checkout()">Bestellen</button>
+        </div>
+    `;
+}
+
 
 function cartSummaryTemplate(totals) {
     return `
