@@ -102,6 +102,8 @@ function mobileCartButtonTemplate() {
                 <h3>Dein Warenkorb</h3>
                 <div id="mobile-cart-items"></div>
                 <div class="cart-summary">
+                    <p>Zwischensumme: <span id="mobile-cart-subtotal">0.00 €</span></p>
+                    <p>Lieferkosten: <span id="mobile-cart-delivery">0.00 €</span></p>
                     <strong>Gesamt: <span id="mobile-cart-sum">0.00 €</span></strong>
                 </div>
                 <button onclick="checkout()">Bestellen</button>
