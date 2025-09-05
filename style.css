@@ -10,6 +10,7 @@
     align-items: flex-start;
 }
 
+
 @media (max-width: 700px) {
     #cart {
         display: none; 
@@ -43,7 +44,25 @@
         z-index: 1100;
     }
 
+    .mobile-cart {
+        display: flex;
+    }
+
     #mobile-cart-overlay.hidden {
         display: none; 
+    }
+
+    .dish-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dish-price, .dish-card button.icon-btn {
+        flex: none;
+        width: 100%;
+    }
+
+    .dish-info {
+        min-width: 100%;
     }
 }
