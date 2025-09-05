@@ -8,8 +8,8 @@ function initApp() {
     renderHero();
     renderRating();
     renderDishes();
-    renderCart();
 
+    renderCart();
     renderFooter();
     initMobileCartEvents();
 
@@ -39,6 +39,7 @@ function addToCart(dishName) {
     if (!cart.includes(dish)) {
         cart.push(dish);
     }
+
     renderCart();
 }
 
@@ -51,6 +52,7 @@ function removeFromCart(dishName) {
     if (dish.amount <= 0) {
         cart = cart.filter(d => d.name !== dishName);
     }
+
     renderCart();
 }
 
@@ -132,6 +134,7 @@ function checkout() {
     if (mobileOverlayItems) {
         mobileOverlayItems.innerHTML = orderConfirmationTemplate();
     }
+
     if (mobileOverlayTotal) {
         mobileOverlayTotal.innerHTML = "0.00 €";
     }
@@ -147,6 +150,7 @@ function createHeroImg() {
     heroImg.src = './assets/img/hero.jpg';
     heroImg.alt = 'Leckeres Essen';
     heroImg.classList.add('hero-img');
+
     return heroImg;
 }
 
@@ -156,6 +160,7 @@ function createOverlayImg() {
     overlayImg.src = './assets/img/flavortown.png';
     overlayImg.alt = 'Flavortown Logo';
     overlayImg.classList.add('overlay-img');
+    
     return overlayImg;
 }
 
