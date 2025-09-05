@@ -11,7 +11,7 @@ function renderDish(dish) {
         </div>
         <span class="dish-price">${dish.price.toFixed(2)} €</span>
         <button class="icon-btn" onclick="addToCart('${dish.name}')">
-            <img src="../assets/img/icon/add.png" alt="Hinzufügen" />
+            <img src="./assets/img/icon/add.png" alt="Hinzufügen" />
         </button>
     `;
     return dishCard;
@@ -25,15 +25,15 @@ function cartItemTemplate(dish) {
             <span>${(dish.price * dish.amount).toFixed(2)} €</span>
             <div class="cart-btn">
                 <button onclick="addToCart('${dish.name}')">
-                    <img src="../assets/img/icon/add.png" alt="+" />
+                    <img src="./assets/img/icon/add.png" alt="+" />
                 </button>
                 
                 <button onclick="removeFromCart('${dish.name}')">
-                    <img src="../assets/img/icon/remove.png" alt="-" />
+                    <img src="./assets/img/icon/remove.png" alt="-" />
                 </button>
                 
                 <button onclick="removeItemCompletely('${dish.name}')">
-                    <img src="../assets/img/icon/delete.png" alt="x" />
+                    <img src="./assets/img/icon/delete.png" alt="x" />
                 </button>
             </div>
         </div>
@@ -63,6 +63,7 @@ function cartSummaryTemplate(totals) {
         </div>
     `;
 }
+
 
 function orderConfirmationTemplate() {
         return `
@@ -77,7 +78,7 @@ function footerTemplate() {
     return `
         <footer class="footer">
             <div class="footer-columns max_width">
-                <img class="footer-logo" src="../assets/img/flavortown.png" alt="Flavortown Logo">
+                <img class="footer-logo" src="./assets/img/flavortown.png" alt="Flavortown Logo">
                 <div class="footer-column logo-column">
                     <p>Wir bieten die besten Gerichte – <br> frisch, lecker und schnell bei dir.</p>
                 </div>
@@ -92,13 +93,13 @@ function footerTemplate() {
                     <h4>Folge uns</h4>
                     <div class="social-links">
                         <a href="https://www.instagram.com/accounts/login/" target="_blank">
-                            <img src="../assets/img/Logo/instagram_white.png" alt="Instagram">
+                            <img src="./assets/img/Logo/instagram_white.png" alt="Instagram">
                         </a>
                         <a href="https://www.facebook.com/?locale=de_DE" target="_blank">
-                            <img src="../assets/img/Logo/facebook_white.png" alt="Facebook">
+                            <img src="./assets/img/Logo/facebook_white.png" alt="Facebook">
                         </a>
                         <a href="https://x.com/i/flow/login" target="_blank">
-                            <img src="../assets/img/Logo/X_logo_white.png" alt="X">
+                            <img src="./assets/img/Logo/X_logo_white.png" alt="X">
                         </a>
                     </div>
                 </div>
@@ -142,13 +143,13 @@ function mobileCartItemTemplate(dish) {
             <span>${(dish.price * dish.amount).toFixed(2)} €</span>
             <div class="cart-btn">
                 <button class="icon-btn add-btn" onclick="addToCart('${dish.name}')">
-                    <img src="../assets/img/icon/add.png" alt="+" />
+                    <img src="./assets/img/icon/add.png" alt="+" />
                 </button>
                 <button class="icon-btn remove-btn" onclick="removeFromCart('${dish.name}')">
-                    <img src="../assets/img/icon/remove.png" alt="-" />
+                    <img src="./assets/img/icon/remove.png" alt="-" />
                 </button>
                 <button class="icon-btn delete-btn" onclick="removeItemCompletely('${dish.name}')">
-                    <img src="../assets/img/icon/delete.png" alt="x" />
+                    <img src="./assets/img/icon/delete.png" alt="x" />
                 </button>
 
             </div>
