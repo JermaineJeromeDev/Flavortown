@@ -75,8 +75,8 @@ function footerTemplate() {
     return `
         <footer class="footer">
             <div class="footer-columns max_width">
+                <img class="footer-logo" src="../assets/img/flavortown.png" alt="Flavortown Logo">
                 <div class="footer-column logo-column">
-                    <img class="footer-logo" src="../assets/img/flavortown.png" alt="Flavortown Logo">
                     <p>Wir bieten die besten Gerichte – <br> frisch, lecker und schnell bei dir.</p>
                 </div>
 
