@@ -106,8 +106,8 @@ function mobileCartButtonTemplate() {
                     <p>Lieferkosten: <span id="mobile-cart-delivery">0.00 €</span></p>
                     <strong>Gesamt: <span id="mobile-cart-sum">0.00 €</span></strong>
                 </div>
-                <button onclick="checkout()">Bestellen</button>
-                <button onclick="toggleMobileCart()">Schließen</button>
+                <button class="checkout-btn" onclick="checkout()">Bestellen</button>
+                <button class="close-btn" onclick="toggleMobileCart()">Schließen</button>
             </div>
         </div>
     `;
@@ -118,16 +118,20 @@ function mobileCartItemTemplate(dish) {
         <div class="cart-item">
             <span>${dish.name} (${dish.amount})</span>
             <span>${(dish.price * dish.amount).toFixed(2)} €</span>
-            <button onclick="removeFromCart('${dish.name}')">
-                <img src="../assets/img/icon/remove.png" alt="-" />
-            </button>
-            <button onclick="addToCart('${dish.name}')">
-                <img src="../assets/img/icon/add.png" alt="+" />
-            </button>
-            <button onclick="removeItemCompletely('${dish.name}')">
-                <img src="../assets/img/icon/delete.png" alt="x" />
-            </button>
+            <div class="cart-btn">
+                <button class="icon-btn add-btn" onclick="addToCart('${dish.name}')">
+                    <img src="../assets/img/icon/add.png" alt="+" />
+                </button>
+                <button class="icon-btn remove-btn" onclick="removeFromCart('${dish.name}')">
+                    <img src="../assets/img/icon/remove.png" alt="-" />
+                </button>
+                <button class="icon-btn delete-btn" onclick="removeItemCompletely('${dish.name}')">
+                    <img src="../assets/img/icon/delete.png" alt="x" />
+                </button>
+
+            </div>
         </div>
     `;
 }
+
 
