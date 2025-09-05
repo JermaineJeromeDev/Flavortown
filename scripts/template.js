@@ -2,16 +2,21 @@ function renderDish(dish) {
     const dishCard = document.createElement("div");
     dishCard.classList.add("dish-card");
     dishCard.innerHTML = `
-        <img src="${dish.image}" alt="${dish.name}">
-        <h3>${dish.name}</h3>
-        <p>${dish.description}</p>
-        <span>${dish.price.toFixed(2)} €</span>
+        <div class="dish-img-wrapper">
+            <img src="${dish.image}" alt="${dish.name}" />
+        </div>
+        <div class="dish-info">
+            <h3>${dish.name}</h3>
+            <p>${dish.description}</p>
+        </div>
+        <span class="dish-price">${dish.price.toFixed(2)} €</span>
         <button class="icon-btn" onclick="addToCart('${dish.name}')">
             <img src="../assets/img/icon/add.png" alt="Hinzufügen" />
         </button>
     `;
     return dishCard;
 }
+
 
 function cartItemTemplate(dish) {
     return `
