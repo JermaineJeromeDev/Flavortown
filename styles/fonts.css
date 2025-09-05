@@ -32,19 +32,21 @@ h2 {
     padding-top: 16px;
 }
 
-.dish-card h3 {
-    font-size: 1.2rem;
-    margin-block-start: 0;
-    margin-block-end: 0;
+.dish-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
 }
 
-.dish-card p {
-    font-size: 0.95rem;
-    color: #555;
-    text-align: left;
+.dish-info p {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.dish-price {
+    flex: 0 0 80px;           
     font-weight: 600;
+    text-align: center;
 }
-
 .dish-card span {
     font-weight: bold;
     margin-bottom: 12px;
