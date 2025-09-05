@@ -40,21 +40,29 @@ function calculateFinalTotal() {
 
 
 function renderCart() {
-    const cartContainer = document.getElementById('cart');
-    cartContainer.innerHTML = "";
+    const desktop = document.getElementById('cart');
+    const mobile = document.getElementById('mobile-cart-items');
+    desktop.innerHTML = "";
+    if (mobile) mobile.innerHTML = "";
 
     if (cart.length === 0) {
-        cartContainer.innerHTML = `<p>Dein Warenkorb ist leer</p>`;
+        const empty = `<p>Dein Warenkorb ist leer</p>`;
+        desktop.innerHTML = empty;
+        if (mobile) mobile.innerHTML = empty;
+        updateMobileCartTotal(0);
         return;
     }
 
-    cart.forEach(dish => {
-        cartContainer.innerHTML += cartItemTemplate(dish);
+    cart.forEach(d => {
+        desktop.innerHTML += cartItemTemplate(d);
+        if (mobile) mobile.innerHTML += mobileCartItemTemplate(d);
     });
 
     const totals = calculateFinalTotal();
-    cartContainer.innerHTML += cartSummaryTemplate(totals);
+    desktop.innerHTML += cartSummaryTemplate(totals);
+    if (mobile) updateMobileCartTotal(totals.final);
 }
+
 
 
 function renderDishes() {
@@ -79,17 +87,28 @@ function renderDishes() {
 }
 
 function checkout() {
-    cart.forEach(d => d.amount = 0); 
+    cart.forEach(d => d.amount = 0);
     cart = [];
-    renderCart();
 
     const cartContainer = document.getElementById('cart');
-    cartContainer.innerHTML = orderConfirmationTemplate();
+    if (cartContainer) {
+        cartContainer.innerHTML = orderConfirmationTemplate();
+    }
+
+    const mobileOverlayItems = document.getElementById('mobile-cart-items');
+    const mobileOverlayTotal = document.getElementById('mobile-cart-sum');
+    if (mobileOverlayItems) {
+        mobileOverlayItems.innerHTML = orderConfirmationTemplate();
+    }
+    if (mobileOverlayTotal) {
+        mobileOverlayTotal.innerHTML = "0.00 €";
+    }
 
     setTimeout(() => {
         renderCart();
     }, 3000);
 }
+
 
 
 function createHeroImg() {
@@ -167,21 +186,66 @@ function renderFooter() {
 
 function toggleMobileCart() {
     const overlay = document.getElementById("mobile-cart-overlay");
-    overlay.classList.add("hidden");
+    if (!overlay) return; 
+    overlay.classList.toggle("hidden");
 }
 
 
 function updateMobileCartTotal(total) {
-    document.getElementById("mobile-cart-total").innerHTML = total.toFixed(2) + " €";
-    document.getElementById("mobile-cart-sum").innerHTML = total.toFixed(2) + " €";
+    const totalEl = document.getElementById("mobile-cart-total");
+    const sumEl = document.getElementById("mobile-cart-sum");
+
+    if (!totalEl || !sumEl) return; 
+
+    totalEl.innerHTML = total.toFixed(2) + " €";
+    sumEl.innerHTML = total.toFixed(2) + " €";
 }
+
+
+function initMobileCartEvents() {
+    const btn = document.getElementById("mobile-cart-button");
+    const overlay = document.getElementById("mobile-cart-overlay");
+    const closeBtn = document.getElementById("mobile-cart-close");
+    const checkoutBtn = document.getElementById("mobile-cart-checkout");
+
+    if (btn) btn.addEventListener("click", toggleMobileCart);
+    if (closeBtn) closeBtn.addEventListener("click", toggleMobileCart);
+    if (checkoutBtn) checkoutBtn.addEventListener("click", checkout);
+
+    window.addEventListener("resize", () => {
+        const mobileBtn = document.getElementById("mobile-cart-button");
+
+        if (window.innerWidth > 700) {
+            
+            if (overlay) overlay.classList.add("hidden");
+
+            if (mobileBtn) mobileBtn.style.display = "none";
+
+            const desktopCart = document.getElementById("cart");
+            if (desktopCart) desktopCart.style.display = "block";
+        } else {
+
+            if (mobileBtn) mobileBtn.style.display = "block";
+
+            const desktopCart = document.getElementById("cart");
+            if (desktopCart) desktopCart.style.display = "none";
+        }
+    });
+
+    const event = new Event('resize');
+    window.dispatchEvent(event);
+}
+
 
 document.addEventListener("DOMContentLoaded", () => {
     renderHero();
     renderRating();
     renderDishes();   
     renderCart(); 
-    renderFooter();
-    toggleMobileCart();    
+    renderFooter();  
+    initMobileCartEvents();
+
+    const body = document.body;
+    body.insertAdjacentHTML("beforeend", mobileCartButtonTemplate());
 });
 
