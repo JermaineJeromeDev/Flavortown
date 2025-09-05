@@ -3,6 +3,18 @@ const DELIVERY_COSTS = 4.99;
 const FREE_DELIVERY_FROM = 30;
 
 
+function initApp() {
+    renderHero();
+    renderRating();
+    renderDishes();
+    renderCart();
+
+    renderFooter();
+    initMobileCartEvents();
+}
+
+
+
 function addToCart(dishName) {
     const dish = dishes.find(d => d.name === dishName);
     if (!dish) return;
@@ -245,17 +257,4 @@ function initMobileCartEvents() {
     const event = new Event('resize');
     window.dispatchEvent(event);
 }
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    renderHero();
-    renderRating();
-    renderDishes();   
-    renderCart(); 
-    renderFooter();  
-    initMobileCartEvents();
-
-    const body = document.body;
-    body.insertAdjacentHTML("beforeend", mobileCartButtonTemplate());
-});
 
